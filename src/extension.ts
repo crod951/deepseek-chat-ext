@@ -71,6 +71,9 @@ function getWebviewContent(): string {
             width: 100%;
             height: 100px;
             box-sizing: border-box;
+            background-color: transparent;
+            font-family: 'Fira Code', monospace;
+            color: #fff;
             border: 1px solid #ccc;
             border-radius: 4px;
             padding: 0.5rem;
@@ -79,7 +82,6 @@ function getWebviewContent(): string {
             width: 100%;
             min-height: 100px;
             box-sizing: border-box;
-            border: 1px solid #ccc;
             border-radius: 4px;
             padding: 0.5rem;
           }
@@ -108,6 +110,7 @@ function getWebviewContent(): string {
             const message = event.data;
             if (message.command === 'chatResponse') {
               response.innerText = message.text;
+              prompt.value = '';
             }
           });
         </script>
